@@ -8,7 +8,7 @@ class Crypto_Asset(models.Model):
 class Preset(models.Model):
     name = models.CharField(max_length=200)
     description = models.TextField()
-    crypto_ass = models.ForeignKey(Crypto_Asset, on_delete=models.CASCADE)
+    crypto_ass = models.ForeignKey(Crypto_Asset, on_delete=models.SET_NULL
     coords = models.FloatField() # IDK in what format the coords should be, so for now I set float
     text_color = models.CharField(max_length=200) # Will it be text, integer (0;255) or hexadecimal number?
     message_text = models.TextField() # It isn't clear what kind of settings will JSON file constain
